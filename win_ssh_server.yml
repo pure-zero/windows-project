@@ -1,8 +1,8 @@
 - name: setup win ssh server
   hosts: windows
-  var_files:
-  - ./ssh_var.yml
   tasks:
+  - name: Bare include (free-form)
+    include_vars: ./ssh_var.yml
   - name: run win win_service_config
     include_role: 
       name: win_service_config
