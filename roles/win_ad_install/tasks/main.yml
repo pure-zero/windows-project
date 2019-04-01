@@ -20,5 +20,5 @@
 
 - name: show list
   debug:
-    msg: "{{output.stderr}}"
+    msg: "{{output.stdout}}"
   
