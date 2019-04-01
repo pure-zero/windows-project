@@ -14,12 +14,12 @@
   notify:
     - reboot instance
 
-- name: list domain
+- name: list domain list after reboot
   win_shell: nltest /dclist:{{ ad_domain_name }}
-  register: listout
+  register: output
 
 - name: show list
   debug:
     msg: "{{items}}"
-  with_items: "{{listout}}"
+  with_items: "{{output}}"
   
