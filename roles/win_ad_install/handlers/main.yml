@@ -1,2 +1,5 @@
 ---
 # handlers file for win_ad_install
+- name: reboot instance
+  win_reboot:
+    reboot_timeout: "600"

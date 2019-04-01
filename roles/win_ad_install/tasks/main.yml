@@ -4,15 +4,22 @@
   win_feature:
     name: ad-domain-services
     state: present
+  notify:
+    - reboot instance
 
 - name: set up ad controller
   win_domain:
     dns_domain_name: "{{ ssh_host }}"
     safe_mode_password: "{{ ansible_password }}"
-
-- name: reboot instance
-  win_reboot:
-    reboot_timeout: "600"
+  notify:
+    - reboot instance
 
 - name: list domain
-  win_shell: nltest /dclist:"{{ ad_domain_name }}"
+  win_shell: nltest /dclist:{{ ad_domain_name }}
+  register: listout
+
+- name: show list
+  debug:
+    msg: "{{items}}"
+  with_items: "{{listout}}"
+  
