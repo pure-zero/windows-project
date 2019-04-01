@@ -20,6 +20,5 @@
 
 - name: show list
   debug:
-    msg: "{{item}}"
-  with_items: "{{output}}"
+    msg: "{{output.stdout}}"
   
