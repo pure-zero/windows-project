@@ -1,0 +1,6 @@
+- name: install ad
+  hosts: windows
+  tasks:
+  - name: run win ad role
+    include_role: 
+      name: win_ad_install
