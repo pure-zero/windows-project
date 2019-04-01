@@ -1,0 +1,8 @@
+- name: add users
+  hosts: windows
+  tasks:
+  - name: Bare include (free-form)
+    include_vars: ./ad_user_vars.yml
+  - name: run win win_ad_user
+    include_role: 
+      name: win_ad_user
