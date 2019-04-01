@@ -1,0 +1,8 @@
+- name: setup win ssh server
+  hosts: windows
+  var_files:
+  - ./ssh_var.yml
+  tasks:
+  - name: run win win_service_config
+    include_role: 
+      name: win_service_config
