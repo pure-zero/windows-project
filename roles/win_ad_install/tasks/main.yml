@@ -12,6 +12,7 @@
 
 - name: reboot instance
   win_reboot:
+    reboot_timeout: "600"
 
 - name: list domain
   win_shell: nltest /dclist:"{{ ad_domain_name }}"
