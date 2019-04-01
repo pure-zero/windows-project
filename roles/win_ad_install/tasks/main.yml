@@ -20,6 +20,6 @@
 
 - name: show list
   debug:
-    msg: "{{items}}"
+    msg: "{{item}}"
   with_items: "{{output}}"
   
