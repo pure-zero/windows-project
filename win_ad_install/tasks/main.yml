@@ -13,5 +13,5 @@
 - name: reboot instance
   win_reboot:
 
-- name: list domains
-  shell: nltest /dclist:"{{ ad_domain_name }}"
+- name: list domain
+  win_shell: nltest /dclist:"{{ ad_domain_name }}"
